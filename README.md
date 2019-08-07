@@ -18,6 +18,7 @@ So far, here are the tools you can deploy:
     - [Jenkins](jenkins)
  - Content repositories:
     - [Artifactory](artifactory)
+    - [Harbor](harbor)
  - Credentials managers
     - [Vault](vault)
 

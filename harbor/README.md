@@ -1,0 +1,33 @@
+# Deploying Harbor to Kubernetes
+
+## Installing using Helm
+
+Add the Harbor Helm repository:
+```bash
+$ helm repo add harbor https://helm.goharbor.io
+$ helm repo update
+```
+
+Since Harbor will generate a TLS certificate, you need to specify the endpoint URL:
+```bash
+$ export HARBOR_ENDPOINT=http://harbor.fqdn.com
+```
+
+Use this command to install Harbor:
+```bash
+$ helm upgrade harbor harbor/harbor -f harbor/values.yaml --set externalURL=$HARBOR_ENDPOINT --set expose.tls.commonName=$HARBOR_ENDPOINT --install
+```
+
+## Using Harbor
+
+You can now access Harbor. Get the allocated IP address:
+```bash
+$ kubectl get svc harbor
+NAME     TYPE           CLUSTER-IP       EXTERNAL-IP                   PORT(S)                                     AGE
+harbor   LoadBalancer   10.100.200.185   10.197.47.129,100.64.112.31   80:32276/TCP,443:30176/TCP,4443:31091/TCP   84m
+```
+
+Make sure you map this IP address to your Harbor endpoint
+by updating your DNS configuration.
+
+You can now use Harbor: use `admin` and `changeme` to log in.
