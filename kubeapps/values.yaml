@@ -1,0 +1,8 @@
+frontend:
+  service:
+    type: LoadBalancer
+
+mongodb:
+  securityContext:
+    enabled: false
+  mongodbEnableIPv6: false
