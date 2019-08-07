@@ -22,7 +22,7 @@ You should access Vault from your apps using an internal cluster service.
 
 Vault UI is available under an external IP address:
 ```bash
-kubectl get svc vault-ui
+$ kubectl get svc vault-ui
 NAME       TYPE           CLUSTER-IP       EXTERNAL-IP                   PORT(S)        AGE
 vault-ui   LoadBalancer   10.100.200.254   10.197.47.134,100.64.112.31   80:31514/TCP   65s
 ```
