@@ -4,7 +4,16 @@
 
 Use this command to install Concourse:
 ```bash
-$ helm upgrade concourse stable/jenkins -f jenkins/values.yaml --set concourse.web.externalUrl=http://concourse.fqdn.com --install
+$ helm upgrade concourse stable/concourse -f concourse/values.yaml --set concourse.web.externalUrl=http://concourse.fqdn.com --install
+```
+
+Credentials will be read from
+[Kubernetes secrets](https://github.com/helm/charts/tree/master/stable/concourse#secrets).
+
+In case you want to use [Vault](https://www.vaultproject.io/) as a credentials manager,
+use this command:
+```bash
+$ helm upgrade concourse stable/concourse -f concourse/values.yaml --set concourse.web.externalUrl=http://concourse.fqdn.com --set concourse.web.kubernetes.enabled=false --set concourse.web.vault.enabled=true --set concourse.web.vault.url=http://vault:8200 --set concourse.web.vault.authBackend=token --set secrets.vaultClientToken=s.fgrlYzp3DagSJlJlievOf7yd --install
 ```
 
 ## Using Concourse
