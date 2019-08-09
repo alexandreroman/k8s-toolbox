@@ -10,12 +10,12 @@ $ helm repo update
 
 Since Harbor will generate a TLS certificate, you need to specify the endpoint URL:
 ```bash
-$ export HARBOR_ENDPOINT=http://harbor.fqdn.com
+$ export HARBOR_ENDPOINT=harbor.fqdn.com
 ```
 
 Use this command to install Harbor:
 ```bash
-$ helm upgrade harbor harbor/harbor -f harbor/values.yaml --set externalURL=$HARBOR_ENDPOINT --set expose.tls.commonName=$HARBOR_ENDPOINT --install
+$ helm upgrade harbor harbor/harbor -f harbor/values.yaml --set externalURL=https://$HARBOR_ENDPOINT --set expose.tls.commonName=$HARBOR_ENDPOINT --install
 ```
 
 ## Using Harbor
@@ -31,3 +31,8 @@ Make sure you map this IP address to your Harbor endpoint
 by updating your DNS configuration.
 
 You can now use Harbor: use `admin` and `changeme` to log in.
+
+Since the default configuration uses self-signed certificates, you will need
+to update your configuration to trust these certificates.
+[Read this page](https://tosbourn.com/getting-os-x-to-trust-self-signed-ssl-certificates/)
+if you're using Mac OS X.
