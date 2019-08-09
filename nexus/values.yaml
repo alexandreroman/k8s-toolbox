@@ -1,0 +1,10 @@
+nexus:
+  service:
+    type: LoadBalancer
+
+nexusProxy:
+  port: 80
+  env:
+    nexusHttpHost: nexus.fqdn.com
+    enforceHttps: false
+    cloudIamAuthEnabled: false

@@ -19,6 +19,7 @@ So far, here are the tools you can deploy:
  - Content repositories:
     - [Artifactory](artifactory)
     - [Harbor](harbor)
+    - [Nexus](nexus)
  - Credentials managers
     - [Vault](vault)
 
