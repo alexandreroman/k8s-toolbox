@@ -20,11 +20,28 @@ in memory, and the vault instance is unsealed by default on start.
 
 You should access Vault from your apps using an internal cluster service.
 
-Vault UI is available under an external IP address:
+Check Vault is running using these commands:
 ```bash
-$ kubectl get svc vault-ui
-NAME       TYPE           CLUSTER-IP       EXTERNAL-IP                   PORT(S)        AGE
-vault-ui   LoadBalancer   10.100.200.254   10.197.47.134,100.64.112.31   80:31514/TCP   65s
+$ kubectl port-forward vault-0 8200
+$ export VAULT_ADDR=http://127.0.0.1:8200
+$ vault status
 ```
 
-Use this token to sign in: `root`.
+Use token `root` to login:
+```bash
+$ vault login
+Token (will be hidden): root
+Success! You are now authenticated. The token information displayed below
+is already stored in the token helper. You do NOT need to run "vault login"
+again. Future Vault requests will automatically use this token.
+
+Key                  Value
+---                  -----
+token                root
+token_accessor       8pOjQwkoInyYtOQU34sPWHsJ
+token_duration       ∞
+token_renewable      false
+token_policies       ["root"]
+identity_policies    []
+policies             ["root"]
+```
