@@ -1,40 +1,5 @@
-expose:
-  type: loadBalancer
-registry:
-  registry:
-    image:
-      tag: v2.7.1-patch-2819-v1.8.1
-  controller:
-    image:
-      tag: v1.8.1
-portal:
-  image:
-    tag: v1.8.1
-core:
-  image:
-    tag: v1.8.1
-jobservice:
-  image:
-    tag: v1.8.1
-chartmuseum:
-  image:
-    tag: v0.8.1-v1.8.1
-clair:
-  image:
-    tag: v2.0.8-v1.8.1
-notary:
-  server:
-    image:
-      tag: v0.6.1-v1.8.1
-  signer:
-    image:
-      tag: v0.6.1-v1.8.1
-database:
-  internal:
-    image:
-      tag: v1.8.1
-redis:
-  internal:
-    image:
-      tag: v1.8.1
+service:
+  type: LoadBalancer
+persistence:
+  resourcePolicy: ""
 harborAdminPassword: changeme

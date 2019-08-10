@@ -15,7 +15,7 @@ $ export HARBOR_ENDPOINT=harbor.fqdn.com
 
 Use this command to install Harbor:
 ```bash
-$ helm upgrade harbor harbor/harbor -f harbor/values.yaml --set externalURL=https://$HARBOR_ENDPOINT --set expose.tls.commonName=$HARBOR_ENDPOINT --install
+$ helm upgrade harbor bitnami/harbor -f harbor/values.yaml --set externalURL=https://$HARBOR_ENDPOINT --set service.tls.commonName=$HARBOR_ENDPOINT --install
 ```
 
 ## Using Harbor
