@@ -1,0 +1,27 @@
+global:
+  edition: ce
+  ingress:
+    configureCertmanager: false
+  hosts:
+    domain: mydomain.com # GitLab will be available under gitlab.mydomain.com
+    https: false
+certmanager:
+  install: false
+prometheus:
+  install: false
+gitlab-runner:
+  install: false
+gitlab:
+  unicorn:
+    minReplicas: 1
+    maxReplicas: 1
+  sidekiq:
+    minReplicas: 1
+    maxReplicas: 1
+  gitlab-shell:
+    minReplicas: 1
+    maxReplicas: 1
+registry:
+  minReplicas: 1
+  maxReplicas: 1
+
