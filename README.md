@@ -16,6 +16,7 @@ So far, here are the tools you can deploy:
  - Continuous Integration tools
     - [Concourse](concourse)
     - [Jenkins](jenkins)
+    - [GitLab](gitlab)
  - Content repositories:
     - [Artifactory](artifactory)
     - [Harbor](harbor)
