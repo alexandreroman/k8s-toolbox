@@ -13,6 +13,8 @@ scripts to run your production workloads ;)
 So far, here are the tools you can deploy:
  - [Helm](helm)
  - [Kubeapps](kubeapps) ([Helm dashboard by Bitnami](https://kubeapps.com))
+ - Monitoring
+    - [Prometheus](prometheus)
  - Continuous Integration tools
     - [Concourse](concourse)
     - [Jenkins](jenkins)
