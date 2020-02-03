@@ -15,6 +15,7 @@ So far, here are the tools you can deploy:
  - [Kubeapps](kubeapps) ([Helm dashboard by Bitnami](https://kubeapps.com))
  - Monitoring
     - [Prometheus](prometheus)
+    - [Grafana](grafana)
  - Continuous Integration tools
     - [Concourse](concourse)
     - [Jenkins](jenkins)
