@@ -1,4 +1,4 @@
-# Deploying Prometheus to Kubernetes
+# Deploying Grafana to Kubernetes
 
 ## Installing using Helm
 
