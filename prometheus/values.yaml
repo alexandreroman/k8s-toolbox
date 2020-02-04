@@ -1,5 +1,7 @@
 alertmanager:
   enabled: false
+kubeStateMetrics:
+  enabled: false
 nodeExporter:
   enabled: false
 pushgateway:
@@ -7,3 +9,6 @@ pushgateway:
 server:
   persistentVolume:
     enabled: false
+  global:
+    scrape_interval: 10s
+    scrape_timeout: 10s
