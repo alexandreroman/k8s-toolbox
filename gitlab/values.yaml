@@ -22,6 +22,6 @@ gitlab:
     minReplicas: 1
     maxReplicas: 1
 registry:
-  minReplicas: 1
-  maxReplicas: 1
-
+  hpa:
+    minReplicas: 1
+    maxReplicas: 1
