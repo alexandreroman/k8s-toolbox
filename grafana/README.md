@@ -11,7 +11,7 @@ $ helm repo update
 Use this command to install Grafana:
 ```bash
 $ kubectl create ns monitoring
-$ helm upgrade grafana stable/grafana -n monitoring -f grafana/values.yaml --install
+$ helm upgrade grafana stable/grafana -n monitoring -f grafana/values.yaml --version 4.4.0 --install
 ```
 
 This instance will automatically be connected to a Prometheus instance running at

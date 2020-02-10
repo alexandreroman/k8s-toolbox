@@ -10,8 +10,9 @@ first.
 get hands on fancy tools for your Kubernetes cluster, but don't trust any of these
 scripts to run your production workloads ;)
 
+Make sure you first [deploy Helm 3 to your cluster](https://helm.sh/docs/intro/install/).
+
 So far, here are the tools you can deploy:
- - [Helm](helm)
  - [Kubeapps](kubeapps) ([Helm dashboard by Bitnami](https://kubeapps.com))
  - Monitoring
     - [Prometheus](prometheus)

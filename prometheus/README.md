@@ -11,7 +11,7 @@ $ helm repo update
 Use this command to install Prometheus:
 ```bash
 $ kubectl create ns monitoring
-$ helm upgrade prometheus stable/prometheus -n monitoring -f prometheus/values.yaml --install
+$ helm upgrade prometheus stable/prometheus -n monitoring -f prometheus/values.yaml --version 10.3.1 --install
 ```
 
 ## Using Prometheus

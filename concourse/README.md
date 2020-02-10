@@ -2,9 +2,16 @@
 
 ## Installing using Helm
 
+Add the Concourse Helm repository:
+```bash
+$ helm repo add concourse https://concourse-charts.storage.googleapis.com/
+$ helm repo update
+```
+
 Use this command to install Concourse:
 ```bash
-$ helm upgrade concourse stable/concourse -f concourse/values.yaml --set concourse.web.externalUrl=http://concourse.fqdn.com --install
+$ kubectl create ns concourse
+$ helm upgrade concourse concourse/concourse -f concourse/values.yaml -n concourse --version 9.0.0 --install --timeout 1200s --set concourse.web.externalUrl=http://concourse.fqdn.com
 ```
 
 Credentials will be read from
@@ -13,14 +20,14 @@ Credentials will be read from
 In case you want to use [Vault](https://www.vaultproject.io/) as a credentials manager,
 use this command:
 ```bash
-$ helm upgrade concourse stable/concourse -f concourse/values.yaml --set concourse.web.externalUrl=http://concourse.fqdn.com --set concourse.web.kubernetes.enabled=false --set concourse.web.vault.enabled=true --set concourse.web.vault.url=http://vault:8200 --set concourse.web.vault.authBackend=token --set secrets.vaultClientToken=s.fgrlYzp3DagSJlJlievOf7yd --install
+$ helm upgrade concourse concourse/concourse -f concourse/values.yaml -n concourse --version 9.0.0 --install --timeout 1200s --set concourse.web.externalUrl=http://concourse.fqdn.com --set concourse.web.kubernetes.enabled=false --set concourse.web.vault.enabled=true --set concourse.web.vault.url=http://vault:8200 --set concourse.web.vault.authBackend=token --set secrets.vaultClientToken=s.fgrlYzp3DagSJlJlievOf7yd
 ```
 
 ## Using Concourse
 
 You can now access Concourse. Get the allocated IP address:
 ```bash
-$ kubectl get svc concourse-web
+$ kubectl -n concourse get svc concourse-web
 NAME            TYPE           CLUSTER-IP      EXTERNAL-IP                   PORT(S)                       AGE
 concourse-web   LoadBalancer   10.100.200.15   10.197.47.130,100.64.112.31   80:31336/TCP,2222:30058/TCP   5m10s
 ```

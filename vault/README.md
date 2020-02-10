@@ -8,9 +8,15 @@ You need to [clone the Git repository](https://github.com/hashicorp/vault-helm/)
 $ git clone https://github.com/hashicorp/vault-helm.git
 ```
 
+You may want to select a tagged release:
+```bash
+$ cd vault-helm && git checkout v0.3.3 && cd -
+```
+
 Use this command to install Vault:
 ```bash
-$ helm upgrade vault vault-helm -f vault/values.yaml --install
+$ kubectl create ns vault
+$ helm upgrade vault vault-helm -n vault -f vault/values.yaml --install
 ```
 
 ## Using Vault
@@ -22,7 +28,7 @@ You should access Vault from your apps using an internal cluster service.
 
 Check Vault is running using these commands:
 ```bash
-$ kubectl port-forward vault-0 8200
+$ kubectl -n vault port-forward vault-0 8200
 $ export VAULT_ADDR=http://127.0.0.1:8200
 $ vault status
 ```

@@ -10,14 +10,15 @@ $ helm repo update
 
 Use this command to install Artifactory:
 ```bash
-$ helm upgrade artifactory jfrog/artifactory -f artifactory/values.yaml --install
+$ kubectl create ns artifactory
+$ helm upgrade artifactory jfrog/artifactory -n artifactory -f artifactory/values.yaml --version 8.4.6 --install
 ```
 
 ## Using Artifactory
 
 You can now access Artifactory. Get the allocated IP address:
 ```bash
-$ kubectl get svc artifactory-artifactory-nginx
+$ kubectl -n artifactory get svc artifactory-artifactory-nginx
 NAME                            TYPE           CLUSTER-IP       EXTERNAL-IP                   PORT(S)                      AGE
 artifactory-artifactory-nginx   LoadBalancer   10.100.200.199   10.197.47.128,100.64.112.31   80:31911/TCP,443:31753/TCP   39
 ```

@@ -1,3 +1,5 @@
+useHelm3: true
+
 frontend:
   service:
     type: LoadBalancer
