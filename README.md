@@ -35,6 +35,6 @@ Feel free to open issues & send PR.
 
 ## License
 
-Copyright &copy; 2019 [Pivotal Software, Inc](https://pivotal.io).
+Copyright &copy; 2020 [VMware Software, Inc](https://vmware.com).
 
 This project is licensed under the [Apache Software License version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
