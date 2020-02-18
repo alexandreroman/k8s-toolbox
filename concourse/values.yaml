@@ -21,3 +21,4 @@ web:
 secrets:
     githubClientId: clientIdInGitHubSettings
     githubClientSecret: clientSecretInGitHubSettings
+    localUsers: "admin:changeme"
