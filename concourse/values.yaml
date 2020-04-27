@@ -6,8 +6,16 @@ concourse:
             enabled: true
         auth:
             mainTeam:
-                github:
-                    org: mygithuborg
+                config: |
+                  roles:
+                  - name: owner
+                    local:
+                      users: ["admin"]
+                localUser: "admin"
+
+                # Uncomment if you want to enable GitHub authentication with your organization.
+                #github:
+                #    org: mygithuborg
             github:
                 # Set to true to enable GitHub integration.
                 # You will need to set values for GitHub properties.
