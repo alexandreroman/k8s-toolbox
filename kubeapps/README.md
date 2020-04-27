@@ -22,7 +22,7 @@ $ helm repo update
 Use this command to install Kubeapps:
 ```bash
 $ kubectl create ns kubeapps
-$ helm upgrade kubeapps bitnami/kubeapps -n kubeapps -f kubeapps/values.yaml --version 3.3.1 --install
+$ helm upgrade kubeapps bitnami/kubeapps -n kubeapps -f kubeapps/values.yaml --version 3.5.3 --install
 ```
 
 ## Using Kubeapps
